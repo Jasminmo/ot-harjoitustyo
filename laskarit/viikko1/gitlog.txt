@@ -1,0 +1,113 @@
+commit f1cd68ad0cfcfdd72f08076bee0ecf6e0c69a999
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:49:08 2021 +0200
+
+    muutos
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit abb16aef2b1f3b0212f422688f14e3b70e36e866
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:48:04 2021 +0200
+
+    lisatty
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit aa86eaed10153ece414f915de614ed9111b94ab5
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:45:11 2021 +0200
+
+    updated
+
+ eka.txt    | 2 --
+ kolmas.txt | 2 +-
+ 2 files changed, 1 insertion(+), 3 deletions(-)
+
+commit 6b35dba5ab164ed34ffc8d12cbc99f1b1ef0bb9a
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:43:53 2021 +0200
+
+    uudelleen nimetty
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c0b0de023df31c028a720a55119e8f75516416f5
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:43:17 2021 +0200
+
+    poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 9492f74e4a274bf71f235cbb7de74b56865139a6
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:42:47 2021 +0200
+
+    uusi muutos
+
+ tiedosto.txt | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 2e5661de6c421579a2c265b41c3db12890a061b1
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:41:58 2021 +0200
+
+    muutos
+
+ tiedosto.txt | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 5f7af6011e33a106bafda96d7e7ff61c3f6338f9
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:39:13 2021 +0200
+
+    stuff/4.txt luotu
+
+ stuff/4.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 76bd4aa6a038484595b9324cb3519572b4ae04f5
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:38:36 2021 +0200
+
+    2. & 3. muutos
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 69ca44d8764b947fb29055a8ef1607bdb0173d9e
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:37:50 2021 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b967b3cbb6bc862ea4b3d4642e07bbba2b292d6c
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:36:56 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 7d23fe348b19ff2f150f3e6b5da9cdc29cfde69e
+Author: Jasmin Mohamed <jasmingiire1@gmail.com>
+Date:   Tue Mar 23 23:36:01 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
