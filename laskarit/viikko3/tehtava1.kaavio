@@ -1,0 +1,13 @@
+[MonopoliPeli]-2..8>[Pelaaja]
+[MonopoliPeli]->[Pelilauta]
+[MonopoliPeli]-2>[Noppa]
+
+[Pelaaja]-1>[Pelilauta]<>-40>[Ruutu]
+
+[Ruutu]<1-1[Pelinappula]
+
+[Pelinappula]<1-1[Pelaaja]
+
+[Ruutu]-1[Ruutu]
+
+[Pelaaja| nimi: String]

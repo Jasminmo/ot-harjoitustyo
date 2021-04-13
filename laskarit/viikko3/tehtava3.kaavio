@@ -1,0 +1,22 @@
+title Tehtävä 3
+
+Client->Machine: new Machine()
+Machine->FuelTank: new FuelTank()
+FuelTank->Machine: tank
+Machine->FuelTank: tank.fill(40)
+Machine->Engine: new Engine(tank)
+Engine->Machine: engine
+Machine->Client: machine
+
+Client->Machine: machine.drive()
+
+Machine->Engine: engine.start()
+Engine->FuelTank: tank.consume(5)
+
+Machine->Engine: engine.isRunning()
+Engine->FuelTank: tank.contentsLeft()
+FuelTank->Engine: contentsLeft
+Engine->Machine: contentsLeft > 0
+
+Machine->Engine: engine.useEnergy()
+Engine->FuelTank: tank.consume(10)

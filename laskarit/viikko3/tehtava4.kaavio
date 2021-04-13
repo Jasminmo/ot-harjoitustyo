@@ -1,0 +1,40 @@
+title Tehtävä 4
+
+main->HKLLaitehallinto: new HKLLaitehallinto()
+HKLLaitehallinto->main: laitehallinto
+main->Lataajalaite: new Lataajalaite()
+Lataajalaite->main: rautatietori
+main->Lukijalaite: new Lukijalaite()
+Lukijalaite->main: ratikka6
+main->Lukijalaite: new Lukijalaite()
+Lukijalaite->main: bussi244
+
+main->HKLLaitehallinto: laitehallinto.lisaaLataaja(rautatietori)
+HKLLaitehallinto->ArrayList: lataajat.add(rautatietori)
+
+main->HKLLaitehallinto: laitehallinto.lisaaLataaja(ratikka6)
+HKLLaitehallinto->ArrayList: lataajat.add(rautatietori)
+
+main->HKLLaitehallinto: laitehallinto.lisaaLataaja(bussi244)
+HKLLaitehallinto->ArrayList: lataajat.add(rautatietori)
+
+main->Kioski: new Kioski()
+Kioski->main: lippuLuukku
+
+main->Kioski: lippuLuukku.ostaMatkakortti("Arto")
+Kioski->Matkakortti: new Matkakortti("Arto")
+Matkakortti->Kioski: artonKortti
+Kioski->main: artonKortti
+
+main->Lataajalaite: rautatietori.lataaArvoa(artonKortti, 3);
+Lataajalaite->Matkakortti: artonKortti.kasvataArvoa(3)
+
+main->Lukijalaite: ratikka6.ostaLippu(artonKortti, 0)
+Lukijalaite->Matkakortti: artonKortti.getArvo()
+Matkakortti->Lataajalaite: 6
+Lukijalaite->Matkakortti: artonKortti.vahennaArvoa(hinta)
+
+main->Lukijalaite: ratikka6.ostaLippu(artonKortti, 2)
+Lukijalaite->Matkakortti: artonKortti.getArvo()
+Matkakortti->Lataajalaite: 4.5
+Lukijalaite->Matkakortti: artonKortti.vahennaArvoa(hinta)

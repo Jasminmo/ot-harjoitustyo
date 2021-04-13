@@ -1,0 +1,31 @@
+[MonopoliPeli]-2..8>[Pelaaja]
+[MonopoliPeli]->[Pelilauta]
+[MonopoliPeli]-2>[Noppa]
+
+[MonopoliPeli]->[Aloitusruutu]
+[MonopoliPeli]->[Vankila]
+
+[Pelaaja]-1>[Pelilauta]<>-40>[Ruutu]
+
+[Ruutu]<1-1[Pelinappula]
+
+[Pelinappula]<1-1[Pelaaja]
+
+[Ruutu]-1[Ruutu]
+
+[Aloitusruutu]^[Ruutu]
+[Vankila]^[Ruutu]
+[Sattuma]^[Ruutu]
+[Yhteismaa]^[Ruutu]
+[Asema]^[Ruutu]
+[Laitos]^[Ruutu]
+[NormaaliKatu| nimi : String]^[Ruutu]
+
+[Ruutu]->[Toiminto]
+[Kortti]->[Sattuma]
+[Kortti]->[Yhteismaa]
+[Kortti]->[Toiminto]
+[Talo]<0..4-[NormaaliKatu]
+[Hotelli]<-[NormaaliKatu]
+[Pelaaja]-omistaja>[NormaaliKatu]
+[Pelaaja| nimi: String; rahaa: Double]
