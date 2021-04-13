@@ -1,5 +1,11 @@
 Opinnot/.DS_Store
 Opinnot/.idea
 Opinnot/*.iml
+Opinnot/target/
+
+laskarit/viikko2/Maksukortti/.idea/
+laskarit/viikko2/Maksukortti/Maksukortti.iml
+laskarit/viikko2/Maksukortti/target/
+
 .DS_Store
 *.swp
