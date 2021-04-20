@@ -1,10 +1,8 @@
 package org.ot_harjoitus.opinnot;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import org.ot_harjoitus.opinnot.domain.Opiskelija;
 
 import static org.junit.Assert.*;
 
@@ -14,12 +12,12 @@ public class OpiskelijaTest {
 
     @Before
     public void setUp() {
-        opiskelija = new Opiskelija(1,"Malli Oppilas");
+        opiskelija = new Opiskelija("1","Malli Oppilas");
     }
 
     @Test
     public void konstruktoriAsettaaArvotOikein() {
-        assertEquals(new Integer(1), opiskelija.getTunnus());
+        assertEquals("1", opiskelija.getTunnus());
         assertEquals("Malli Oppilas", opiskelija.getNimi());
     }
 
@@ -35,5 +33,15 @@ public class OpiskelijaTest {
         String sana = "salainen-sana";
         opiskelija.setSalasana(sana);
         assertEquals(sana, opiskelija.getSalasana());
+    }
+
+    @Test
+    public void equalsToimiiOikein() {
+        assertEquals(opiskelija, opiskelija);
+        assertNotEquals(opiskelija, null);
+        assertNotEquals(opiskelija, "opiskelija");
+
+        Opiskelija toinenOpiskelija = new Opiskelija("1", "Malli Oppilas");
+        assertEquals(opiskelija, toinenOpiskelija);
     }
 }

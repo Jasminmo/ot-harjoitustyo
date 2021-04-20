@@ -1,19 +1,17 @@
-package org.ot_harjoitus.opinnot;
-
-import java.util.Objects;
+package org.ot_harjoitus.opinnot.domain;
 
 public class Kurssi {
-    private Integer koodi;
+    private String koodi;
     private String nimi;
     private Integer opintopisteet;
 
-    public Kurssi(Integer koodi, String nimi, Integer opintopisteet) {
+    public Kurssi(String koodi, String nimi, Integer opintopisteet) {
         this.koodi = koodi;
         this.nimi = nimi;
         this.opintopisteet = opintopisteet;
     }
 
-    public Integer getKoodi() {
+    public String getKoodi() {
         return koodi;
     }
 

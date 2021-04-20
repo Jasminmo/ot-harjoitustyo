@@ -1,7 +1,6 @@
-package org.ot_harjoitus.opinnot;
+package org.ot_harjoitus.opinnot.domain;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class Suoritus {
     private Kurssi kurssi;
@@ -12,6 +11,9 @@ public class Suoritus {
         this.kurssi = kurssi;
         this.opiskelija = opiskelija;
         this.suoritusHetki = suoritusHetki;
+    }
+    public Suoritus(Kurssi kurssi, Opiskelija opiskelija) {
+        this(kurssi, opiskelija, new Date());
     }
 
     public Kurssi getKurssi() {

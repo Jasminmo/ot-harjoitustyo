@@ -1,19 +1,23 @@
-package org.ot_harjoitus.opinnot;
-
-import java.util.Objects;
+package org.ot_harjoitus.opinnot.domain;
 
 public class Opiskelija {
-    private final Integer tunnus;
+    private final String tunnus;
     private final String nimi;
     private String sahkoposti;
     private String salasana;
 
-    public Opiskelija(Integer opiskelijaTunnus, String nimi) {
-        this.tunnus = opiskelijaTunnus;
-        this.nimi = nimi;
+    public Opiskelija(String tunnus, String nimi) {
+        this(tunnus, nimi, "", "");
     }
 
-    public Integer getTunnus() {
+    public Opiskelija(String tunnus, String nimi, String sahkoposti, String salasana) {
+        this.tunnus = tunnus;
+        this.nimi = nimi;
+        this.sahkoposti = sahkoposti;
+        this.salasana = salasana;
+    }
+
+    public String getTunnus() {
         return tunnus;
     }
 

@@ -1,10 +1,9 @@
-package org.ot_harjoitus.opinnot;
+package org.ot_harjoitus.opinnot.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
-
+public class KurssiSuoritusService {
     private final List<Opiskelija> opiskelijat = new ArrayList<>();
     private final List<Kurssi> kurssit = new ArrayList<>();
     private final List<Suoritus> suoritukset = new ArrayList<>();
@@ -16,14 +15,12 @@ public class Main {
 
     public void lisaaKurssi(Kurssi kurssi) {
         if (!kurssit.contains(kurssi))
-        kurssit.add(kurssi);
+            kurssit.add(kurssi);
     }
 
     public void lisaaSuoritus(Suoritus suoritus) {
         if (!suoritukset.contains(suoritus))
-        suoritukset.add(suoritus);
+            suoritukset.add(suoritus);
     }
 
-    public static void main(String[] args) {
-    }
 }
