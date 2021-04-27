@@ -64,7 +64,7 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka sekvenssikaaviona.
 
 <img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/listaa-tiedot.png" width="400">
 
-<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/lisaa-kurssi.png" width="400">
+<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/tulosta-tiedot.png" width="400">
 
 ### käyttöliittymä
 
