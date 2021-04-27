@@ -4,7 +4,7 @@
 
 Ohjelman rakenne seuraa kolmitasoista kerrosarkkitehtuuria.
 Koodin pakkausrakenne on seuraava:
-<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/pakkaus.png" width="400">
+<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/pakkaus.png">
 
 
 Pakkaus _opinnot.dao_ huolehtii tietojen pysyväistallennuksesta,
@@ -18,7 +18,7 @@ Sovelluksen loogisen datamallin muodostavat luokat [Kurssi](https://github.com/J
 [Opiskelija](https://github.com/Jasminmo/ot-harjoitustyo/blob/master/Opinnot/src/main/java/org/otharjoitus/opinnot/domain/Opiskelija.java) ja
 [Suoritus](https://github.com/Jasminmo/ot-harjoitustyo/blob/master/Opinnot/src/main/java/org/otharjoitus/opinnot/domain/Suoritus.java) jotka kuvaavat kursseja, opiskelijoita sekä opintosuorituksia:
 
-<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/luokkakaavio.png" width="80">
+<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/luokkakaavio.png">
 
 Toiminnallisista kokonaisuuksista vastaa luokka [KurssiSuoritusService](https://github.com/Jasminmo/ot-harjoitustyo/Opinnot/blob/master/src/main/java/org/otharjoitus/domain/KurssiSuoritusService.java).
 
@@ -62,9 +62,9 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka sekvenssikaaviona.
 
 #### Tietojen listaus
 
-<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/listaa-tiedot.png" width="400">
+<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/listaa-tiedot.png">
 
-<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/tulosta-tiedot.png" width="400">
+<img src="https://raw.githubusercontent.com/Jasminmo/ot-harjoitustyo/master/dokumentaatio/kuvat/tulosta-tiedot.png">
 
 ### käyttöliittymä
 
