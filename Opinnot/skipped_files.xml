@@ -5,5 +5,5 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="org.ot_harjoitus.opinnot.ui.KurssiSuoritusUI.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="org.otharjoitus.opinnot.ui.KurssiSuoritusGUI.java" checks="[a-zA-Z0-9]*"/>
 </suppressions>

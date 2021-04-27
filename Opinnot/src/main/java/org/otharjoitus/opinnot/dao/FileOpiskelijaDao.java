@@ -1,19 +1,20 @@
-package org.ot_harjoitus.opinnot.dao;
+package org.otharjoitus.opinnot.dao;
 
-import org.ot_harjoitus.opinnot.domain.Opiskelija;
+import org.otharjoitus.opinnot.domain.Opiskelija;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileOpiskelijaDoa implements OpiskelijaDao {
+public class FileOpiskelijaDao implements OpiskelijaDao {
 
     private List<Opiskelija> opiskelijat;
     private String filename;
 
-    public FileOpiskelijaDoa(String file) throws Exception {
+    public FileOpiskelijaDao(String file) throws IOException {
         opiskelijat = new ArrayList<>();
         filename = file;
 
@@ -35,7 +36,7 @@ public class FileOpiskelijaDoa implements OpiskelijaDao {
     }
 
     @Override
-    public Opiskelija create(Opiskelija o) throws Exception {
+    public Opiskelija create(Opiskelija o) throws IOException {
         opiskelijat.add(o);
         save();
         return o;
@@ -49,7 +50,7 @@ public class FileOpiskelijaDoa implements OpiskelijaDao {
                 .orElse(null);
     }
 
-    private void save() throws Exception {
+    private void save() throws IOException {
         try (FileWriter writer = new FileWriter(new File(filename))) {
             for (Opiskelija o : opiskelijat) {
                 writer.write(o.getTunnus() + ";" + o.getNimi() + ";" + o.getSahkoposti()  + ";" + o.getSalasana() + "\n");

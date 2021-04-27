@@ -1,4 +1,4 @@
-package org.ot_harjoitus.opinnot.domain;
+package org.otharjoitus.opinnot.domain;
 
 import java.util.Date;
 
@@ -30,9 +30,22 @@ public class Suoritus {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Suoritus)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Suoritus)) {
+            return false;
+        }
         Suoritus suoritus = (Suoritus) o;
         return getKurssi().equals(suoritus.getKurssi()) && getOpiskelija().equals(suoritus.getOpiskelija()) && getSuoritusHetki().equals(suoritus.getSuoritusHetki());
+    }
+
+    @Override
+    public String toString() {
+        return "Suoritus{" +
+                "kurssi='" + kurssi.getNimi() +
+                "', opiskelija='" + opiskelija.getNimi() +
+                "', suoritusHetki='" + suoritusHetki +
+                "'}";
     }
 }

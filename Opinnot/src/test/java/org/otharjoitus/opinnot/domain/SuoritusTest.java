@@ -1,10 +1,7 @@
-package org.ot_harjoitus.opinnot;
+package org.otharjoitus.opinnot.domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.ot_harjoitus.opinnot.domain.Kurssi;
-import org.ot_harjoitus.opinnot.domain.Opiskelija;
-import org.ot_harjoitus.opinnot.domain.Suoritus;
 
 import java.util.Date;
 
@@ -20,7 +17,7 @@ public class SuoritusTest {
     @Before
     public void setUp() {
         kurssi = new Kurssi("1", "Uusi-Kurssi", 5);
-        opiskelija = new Opiskelija("1","Malli Oppilas");
+        opiskelija = new Opiskelija("1", "Malli Oppilas");
         date = new Date();
         suoritus = new Suoritus(kurssi, opiskelija, date);
     }
@@ -43,5 +40,11 @@ public class SuoritusTest {
 
         toinen = new Suoritus(kurssi, null);
         assertNotEquals(suoritus, toinen);
+    }
+
+    @Test
+    public void toStringToimiiOikein() {
+        String mjono = "Suoritus{kurssi='Uusi-Kurssi', opiskelija='Malli Oppilas', suoritusHetki='" + date +"'}";
+        assertEquals(suoritus.toString(), mjono);
     }
 }

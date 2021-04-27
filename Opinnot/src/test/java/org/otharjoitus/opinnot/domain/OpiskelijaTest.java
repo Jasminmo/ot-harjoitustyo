@@ -1,8 +1,7 @@
-package org.ot_harjoitus.opinnot;
+package org.otharjoitus.opinnot.domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.ot_harjoitus.opinnot.domain.Opiskelija;
 
 import static org.junit.Assert.*;
 
@@ -43,5 +42,11 @@ public class OpiskelijaTest {
 
         Opiskelija toinenOpiskelija = new Opiskelija("1", "Malli Oppilas");
         assertEquals(opiskelija, toinenOpiskelija);
+    }
+
+    @Test
+    public void toStringToimiiOikein() {
+        String mjono = "Opiskelija{tunnus='1', nimi='Malli Oppilas', sahkoposti='', salasana='*****'}";
+        assertEquals(opiskelija.toString(), mjono);
     }
 }

@@ -1,11 +1,12 @@
-package org.ot_harjoitus.opinnot.dao;
+package org.otharjoitus.opinnot.dao;
 
-import org.ot_harjoitus.opinnot.domain.Kurssi;
-import org.ot_harjoitus.opinnot.domain.Opiskelija;
-import org.ot_harjoitus.opinnot.domain.Suoritus;
+import org.otharjoitus.opinnot.domain.Kurssi;
+import org.otharjoitus.opinnot.domain.Opiskelija;
+import org.otharjoitus.opinnot.domain.Suoritus;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class FileSuoritusDao implements SuoritusDao {
     private final String filename;
     private final SimpleDateFormat dateFormatter;
 
-    public FileSuoritusDao(String file, KurssiDao kurssit, OpiskelijaDao opiskelijat) throws Exception {
+    public FileSuoritusDao(String file, KurssiDao kurssit, OpiskelijaDao opiskelijat) throws IOException {
         suoritukset = new ArrayList<>();
         filename = file;
         dateFormatter = new SimpleDateFormat("yyyy-dd-MM");
@@ -39,7 +40,7 @@ public class FileSuoritusDao implements SuoritusDao {
         }
     }
 
-    private void save() throws Exception{
+    private void save() throws IOException {
         try (FileWriter writer = new FileWriter(new File(filename))) {
             for (Suoritus s : suoritukset) {
                 writer.write(s.getKurssi().getKoodi() + ";" + s.getOpiskelija().getTunnus() + ";" + dateFormatter.format(s.getSuoritusHetki()) + "\n");
@@ -53,7 +54,7 @@ public class FileSuoritusDao implements SuoritusDao {
     }
 
     @Override
-    public Suoritus create(Suoritus s) throws Exception {
+    public Suoritus create(Suoritus s) throws IOException {
         suoritukset.add(s);
         save();
         return s;

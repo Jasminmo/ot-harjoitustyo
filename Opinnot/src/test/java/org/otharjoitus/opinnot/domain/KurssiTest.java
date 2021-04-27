@@ -1,8 +1,7 @@
-package org.ot_harjoitus.opinnot;
+package org.otharjoitus.opinnot.domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.ot_harjoitus.opinnot.domain.Kurssi;
 
 import static org.junit.Assert.*;
 
@@ -18,7 +17,12 @@ public class KurssiTest {
     public void konstruktoriAsettaaArvotOikein() {
         assertEquals("1", kurssi.getKoodi());
         assertEquals("Uusi-Kurssi", kurssi.getNimi());
-        assertEquals(new Integer(5), kurssi.getOpintopisteet());
+        assertEquals(Integer.valueOf(5), kurssi.getOpintopisteet());
+    }
+
+    @Test(expected=IllegalArgumentException.class)
+    public void konstruktoriEiAsettaNegatiivistaOpintopisttä() {
+        kurssi = new Kurssi("12345", "Uusi-Kurssi", -5);
     }
 
     @Test
@@ -32,5 +36,11 @@ public class KurssiTest {
 
         toinen = new Kurssi("10", "Uusi-Kurssi", 5);
         assertNotEquals(kurssi, toinen);
+    }
+
+    @Test
+    public void toStringToimiiOikein() {
+        String mjono = "Kurssi{koodi='1', nimi='Uusi-Kurssi', opintopisteet=5}";
+        assertEquals(kurssi.toString(), mjono);
     }
 }

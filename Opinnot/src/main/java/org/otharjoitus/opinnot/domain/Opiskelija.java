@@ -1,4 +1,4 @@
-package org.ot_harjoitus.opinnot.domain;
+package org.otharjoitus.opinnot.domain;
 
 public class Opiskelija {
     private final String tunnus;
@@ -43,9 +43,22 @@ public class Opiskelija {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Opiskelija)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Opiskelija)) {
+            return false;
+        }
         Opiskelija that = (Opiskelija) o;
         return getTunnus().equals(that.getTunnus());
+    }
+
+    @Override
+    public String toString() {
+        return "Opiskelija{" +
+                "tunnus='" + tunnus + '\'' +
+                ", nimi='" + nimi + '\'' +
+                ", sahkoposti='" + sahkoposti + '\'' +
+                ", salasana='*****'}";
     }
 }

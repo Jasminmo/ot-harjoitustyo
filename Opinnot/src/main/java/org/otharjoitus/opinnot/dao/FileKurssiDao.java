@@ -1,18 +1,20 @@
-package org.ot_harjoitus.opinnot.dao;
+package org.otharjoitus.opinnot.dao;
 
-import org.ot_harjoitus.opinnot.domain.Kurssi;
+import org.otharjoitus.opinnot.domain.Kurssi;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.IOException;
+
 
 public class FileKurssiDao implements KurssiDao {
     private List<Kurssi> kurssit;
     private String file;
 
-    public FileKurssiDao(String file) throws Exception {
+    public FileKurssiDao(String file) throws IOException {
         kurssit = new ArrayList<>();
         this.file = file;
         try {
@@ -33,7 +35,7 @@ public class FileKurssiDao implements KurssiDao {
     }
 
     @Override
-    public Kurssi create(Kurssi k) throws Exception {
+    public Kurssi create(Kurssi k) throws IOException {
         kurssit.add(k);
         save();
         return k;
@@ -47,7 +49,7 @@ public class FileKurssiDao implements KurssiDao {
                 .orElse(null);
     }
 
-    private void save() throws Exception {
+    private void save() throws IOException {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Kurssi kurssi : kurssit) {
                 writer.write(kurssi.getKoodi() + ";" + kurssi.getNimi() + ";" + kurssi.getOpintopisteet() + "\n");
