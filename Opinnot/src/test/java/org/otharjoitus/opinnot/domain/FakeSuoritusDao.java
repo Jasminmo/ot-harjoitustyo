@@ -19,4 +19,9 @@ public class FakeSuoritusDao implements SuoritusDao {
     public List<Suoritus> getAll() {
         return suoritukset;
     }
+
+    @Override
+    public List<Suoritus> getOpiskelijanSuoritukset(String tunnus) {
+        return null;
+    }
 }

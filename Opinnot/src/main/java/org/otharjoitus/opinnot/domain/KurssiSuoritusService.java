@@ -50,4 +50,9 @@ public class KurssiSuoritusService {
     public Opiskelija getOpiskelija(String tunnus) {
         return opiskelijaDao.findByTunnus(tunnus);
     }
+
+    public Opiskelija getOpiskelijaSahkopostilla(String s) {
+        return opiskelijaDao.findBySahkoposti(s);
+    }
+
 }

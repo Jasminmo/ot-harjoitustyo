@@ -1,5 +1,8 @@
 package org.otharjoitus.opinnot.domain;
 
+/**
+ * Yksin kertainen kurssi-luokka.
+ */
 public class Kurssi {
     private String koodi;
     private String nimi;
@@ -27,6 +30,11 @@ public class Kurssi {
         return opintopisteet;
     }
 
+    /**
+     * Tarkistaa onko this sama kuin o.
+     * @param o
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

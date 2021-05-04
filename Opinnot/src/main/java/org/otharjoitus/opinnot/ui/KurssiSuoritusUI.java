@@ -13,32 +13,52 @@ import java.util.TreeMap;
 
 public class KurssiSuoritusUI {
     private Scanner scanner;
-    private Map<String, String> commands;
+    private Map<String, String> generalCommands;
+    private Map<String, String> adminCommands;
+    private Map<String, String> opiskelijaCommands;
     private KurssiSuoritusService service;
+    private String studentLoggedin;
+    private boolean adminLoggedin;
 
     public KurssiSuoritusUI(Scanner s) throws IOException {
         scanner = s;
         service = Utils.getDefaultService();
 
-        commands = new TreeMap<>();
-        commands.put("x", "x lopeta");
-        commands.put("1", "1 hae kurssit");
-        commands.put("2", "2 hae opiskelijat");
-        commands.put("3", "3 hae suoritukset");
-        commands.put("4", "4 lisää kurssi");
-        commands.put("5", "5 lisää opiskelija");
-        commands.put("6", "6 lisää suoritus");
+        generalCommands = new TreeMap<>();
+        generalCommands.put("x", "x lopeta");
+        generalCommands.put("1", "1 ylläpitäjä, kirjaudu sisään");
+        generalCommands.put("2", "2 opiskelija, kirjaudu sisään");
+
+        adminCommands = new TreeMap<>();
+        adminCommands.put("x", "x lopeta");
+        adminCommands.put("3", "3 hae kurssit");
+        adminCommands.put("4", "4 hae opiskelijat");
+        adminCommands.put("5", "5 hae suoritukset");
+        adminCommands.put("6", "6 lisää kurssi");
+        adminCommands.put("7", "7 lisää opiskelija");
+        adminCommands.put("8", "8 lisää suoritus");
+
+        opiskelijaCommands = new TreeMap<>();
+        opiskelijaCommands.put("x", "x lopeta");
+        opiskelijaCommands.put("3", "3 hae kurssit");
+        opiskelijaCommands.put("5", "5 hae suoritukset");
     }
 
     public void start() {
-        printHelp();
-
-
         while (true) {
+            Map<String, String> commands = generalCommands;
+            if (studentLoggedin != null && !studentLoggedin.isEmpty()) {
+                commands = opiskelijaCommands;
+            } else if (adminLoggedin) {
+                commands = adminCommands;
+            }
+
+            printHelp();
+
             System.out.println();
             System.out.print("komento: ");
             String command = scanner.nextLine();
-            if (!commands.keySet().contains(command)) {
+            if (!commands.containsKey(command)) {
                 System.out.println("virheellinen komento.");
                 printHelp();
             }
@@ -46,16 +66,20 @@ public class KurssiSuoritusUI {
             if (command.equals("x")) {
                 break;
             } else if (command.equals("1")) {
-                tulostaKurssit();
+                adminKirjautuminen();
             } else if (command.equals("2")) {
-                tulostaOpiskelijat();
+                opiskelijanKirjautuminen();
             } else if (command.equals("3")) {
-                tulostaSuoritukset();
+                tulostaKurssit();
             } else if (command.equals("4")) {
-                lisaaKurssi();
+                tulostaOpiskelijat();
             } else if (command.equals("5")) {
-                lisaaOpiskelija();
+                tulostaSuoritukset();
             } else if (command.equals("6")) {
+                lisaaKurssi();
+            } else if (command.equals("7")) {
+                lisaaOpiskelija();
+            } else if (command.equals("8")) {
                 lisaaSuoritus();
             }
 
@@ -71,7 +95,11 @@ public class KurssiSuoritusUI {
     }
 
     private void tulostaSuoritukset() {
-        service.getSuoritukset().stream().forEachOrdered(System.out::println);
+        if (studentLoggedin == null) {
+            service.getSuoritukset().stream().forEachOrdered(System.out::println);
+        } else {
+            service.getSuoritukset().stream().forEachOrdered(System.out::println);
+        }
     }
 
     private void lisaaKurssi() {
@@ -121,13 +149,50 @@ public class KurssiSuoritusUI {
         }
     }
 
+    private void adminKirjautuminen() {
+        System.out.print("salasana: ");
+        String salasana = scanner.nextLine();
+        if (!salasana.equals("salasana")) {
+            System.out.println("Virheellinen salasana!");
+        } else {
+            System.out.println("Tervetuloa admin!");
+            adminLoggedin = true;
+        }
+    }
+
+
+    private void opiskelijanKirjautuminen() {
+        System.out.print("email: ");
+        String email = scanner.nextLine();
+        System.out.print("salasana: ");
+        String salasana = scanner.nextLine();
+
+        Opiskelija opiskelija = service.getOpiskelijaSahkopostilla(email);
+        if (opiskelija == null || !opiskelija.getSalasana().equals(salasana)) {
+            System.out.println("Virheellinen käyttäjätunnus tai salasana!");
+            return;
+        }
+        studentLoggedin = service.getOpiskelijat().get(0).getTunnus();
+    }
+
     private void printHelp() {
         System.out.println("Opintorekisteri palvelu.");
 
-        System.out.println("Käytössä olevat komennot:");
-        for (int i = 1; i < commands.size(); i++) {
-            System.out.println(commands.get(Integer.toString(i)));
+        Map<String, String> commands = generalCommands;
+        if (studentLoggedin != null && !studentLoggedin.isEmpty()) {
+            commands = opiskelijaCommands;
+            System.out.print("Opiskelijan ");
+        } else if (adminLoggedin) {
+            commands = adminCommands;
+            System.out.print("Ylläpitäjän ");
         }
-        System.out.println("x lopeta");
+
+        System.out.println("käytössä olevat komennot:");
+        commands.values()
+                .stream()
+                .sorted()
+                .forEachOrdered(System.out::println);
     }
+
+
 }

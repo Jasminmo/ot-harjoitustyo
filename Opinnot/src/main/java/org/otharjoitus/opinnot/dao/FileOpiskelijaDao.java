@@ -50,6 +50,14 @@ public class FileOpiskelijaDao implements OpiskelijaDao {
                 .orElse(null);
     }
 
+    @Override
+    public Opiskelija findBySahkoposti(String s) {
+        return opiskelijat.stream()
+                .filter(o -> o.getSahkoposti().equals(s))
+                .findFirst()
+                .orElse(null);
+    }
+
     private void save() throws IOException {
         try (FileWriter writer = new FileWriter(new File(filename))) {
             for (Opiskelija o : opiskelijat) {

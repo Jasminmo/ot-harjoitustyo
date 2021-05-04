@@ -9,7 +9,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * Luokka sisältää yleispalveluja.
+ */
+
 public class Utils {
+    /**
+     * Metodi hakee oletus-arvoisen KurssiSuoritusService-luokan,
+     * jonka sisältämät daot ovat tiedosto
+     * @return Oletus-arvoisen KurssiSuoritusService-luokan.
+     * @throws IOException
+     */
     public static KurssiSuoritusService getDefaultService() throws IOException {
         Properties properties = new Properties();
 

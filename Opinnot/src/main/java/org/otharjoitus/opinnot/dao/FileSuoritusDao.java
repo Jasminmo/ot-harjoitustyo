@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FileSuoritusDao implements SuoritusDao {
     public final List<Suoritus> suoritukset;
@@ -51,6 +52,13 @@ public class FileSuoritusDao implements SuoritusDao {
     @Override
     public List<Suoritus> getAll() {
         return suoritukset;
+    }
+
+    @Override
+    public List<Suoritus> getOpiskelijanSuoritukset(String tunnus) {
+        return suoritukset.stream()
+                .filter(s -> s.getOpiskelija().getTunnus().equals(tunnus))
+                .collect(Collectors.toList());
     }
 
     @Override

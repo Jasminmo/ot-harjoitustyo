@@ -14,10 +14,20 @@ suuremmilla oikeuksilla varustettu _pääkäyttäjä_.
 
 ## Suunnitellut toiminnallisuudet
 
-- kurssien lisäys
-- suoritettujen kurssien tarkastelu
-- kurssitietojen editointi
-- kurssien järjestely vaikka arvosanan perusteella
-- mahdollisuus useampaan erilliseen opintokokonaisuus-listaan
-- lisätään kurssiin kenttä, johon on mahdollista merkitä siihen liittyviä tietoja
-- opiskelijan salasana-kenttä, joka vaaditaan kirjautuessa
+- [ ] Graafinen käyttöliittymä
+
+### Ylläpitäjän toiminnallisuudet
+- [ ] kirjautuminen
+- [x] kurssien lisäys
+- [x] opiskelijoiden lisäys
+- [x] suoritusten lisäys
+- [x] lisätään kurssiin kenttä, johon on mahdollista merkitä siihen liittyviä tietoja
+- [x] opiskelijan salasana-kenttä, joka vaaditaan kirjautuessa
+
+
+### Opiskelijan toiminnallisuudet
+- [ ] kirjautuminen
+- [x] suoritusten listaus
+- [ ] suoritusten painotetun keskiarvon tulostus
+- [ ] suoritusten järjestely erillaisin kriteerin
+- [ ] mahdollisuus useampaan erilliseen opintokokonaisuus-listaan

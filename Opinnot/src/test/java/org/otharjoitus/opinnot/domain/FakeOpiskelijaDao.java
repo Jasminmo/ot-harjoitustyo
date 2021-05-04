@@ -25,6 +25,11 @@ public class FakeOpiskelijaDao implements OpiskelijaDao {
     }
 
     @Override
+    public Opiskelija findBySahkoposti(String s) {
+        return opiskelijat.stream().filter(u->u.getSahkoposti().equals(s)).findFirst().orElse(null);
+    }
+
+    @Override
     public List<Opiskelija> getAll() {
         return opiskelijat;
     }
