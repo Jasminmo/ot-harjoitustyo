@@ -141,7 +141,11 @@ public class KurssiSuoritusUI {
         String tunnus = scanner.nextLine();
         Kurssi kurssi = service.getKurssi(koodi);
         Opiskelija opiskelija = service.getOpiskelija(tunnus);
-        Suoritus suoritus = new Suoritus(kurssi, opiskelija);
+
+        System.out.print("arvosana: ");
+        Integer arvosana = Integer.parseInt(scanner.nextLine());
+
+        Suoritus suoritus = new Suoritus(kurssi, opiskelija, arvosana);
         try {
             service.lisaaSuoritus(suoritus);
         } catch (Exception e) {

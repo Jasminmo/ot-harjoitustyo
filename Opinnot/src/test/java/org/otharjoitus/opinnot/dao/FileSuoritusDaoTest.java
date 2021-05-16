@@ -59,7 +59,7 @@ public class FileSuoritusDaoTest {
         Opiskelija newOpiskelija = new Opiskelija("01234", "New-Oppilas", "new.oppilas@helsinki.fi", "sala");
 
         Date date = new Date();
-        Suoritus newSuoritus = new Suoritus(newKurssi, newOpiskelija, date);
+        Suoritus newSuoritus = new Suoritus(newKurssi, newOpiskelija, date, 5);
         suoritusDao.create(newSuoritus);
 
         List<Suoritus> suoritukset = suoritusDao.getAll();

@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        KurssiSuoritusUI ui = new KurssiSuoritusUI(new Scanner(System.in));
-        ui.start();
-        //KurssiSuoritusGUI.main(args);
+        //KurssiSuoritusUI ui = new KurssiSuoritusUI(new Scanner(System.in));
+        //ui.start();
+        KurssiSuoritusGUI.main(args);
     }
 }

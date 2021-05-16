@@ -1,1 +1,2 @@
 12345;Malli, Oppilas;oppilas.malli@helsinki.fi;salainen-sana
+54321;Testi, Oppilas;testi.oppilas@helsinki.fi;salasana

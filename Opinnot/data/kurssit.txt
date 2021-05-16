@@ -1,1 +1,5 @@
 12345;Testi-Kurssi;99
+TKT10002;Ohjelmoinnin perusteet;5
+TKT10003;Ohjelmoinnin jatkokurssi;5
+TKT10004;Tietokantojen perusteet;5
+TKT-Testi;Kurssi-Testi;10

@@ -32,7 +32,7 @@ public class FileSuoritusDao implements SuoritusDao {
                 Opiskelija opiskelija = opiskelijat
                         .getAll().stream()
                         .filter(o->o.getTunnus().equals(parts[1])).findFirst().orElse(null);
-                Suoritus s = new Suoritus(kurssi, opiskelija, dateFormatter.parse(parts[2]));
+                Suoritus s = new Suoritus(kurssi, opiskelija, dateFormatter.parse(parts[2]), Integer.parseInt(parts[3]));
                 suoritukset.add(s);
             }
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public class FileSuoritusDao implements SuoritusDao {
     private void save() throws IOException {
         try (FileWriter writer = new FileWriter(new File(filename))) {
             for (Suoritus s : suoritukset) {
-                writer.write(s.getKurssi().getKoodi() + ";" + s.getOpiskelija().getTunnus() + ";" + dateFormatter.format(s.getSuoritusHetki()) + "\n");
+                writer.write(s.getKurssi().getKoodi() + ";" + s.getOpiskelija().getTunnus() + ";" + dateFormatter.format(s.getSuoritusHetki()) + ";" + s.getArvosana()+ "\n");
             }
         }
     }

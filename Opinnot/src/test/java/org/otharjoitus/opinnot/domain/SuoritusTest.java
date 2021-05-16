@@ -19,7 +19,7 @@ public class SuoritusTest {
         kurssi = new Kurssi("1", "Uusi-Kurssi", 5);
         opiskelija = new Opiskelija("1", "Malli Oppilas");
         date = new Date();
-        suoritus = new Suoritus(kurssi, opiskelija, date);
+        suoritus = new Suoritus(kurssi, opiskelija, date, 5);
     }
 
     @Test
@@ -35,10 +35,10 @@ public class SuoritusTest {
         assertNotEquals(suoritus, null);
         assertNotEquals(suoritus, "kurssi");
 
-        Suoritus toinen = new Suoritus(kurssi, opiskelija, date);
+        Suoritus toinen = new Suoritus(kurssi, opiskelija, date, 5);
         assertEquals(suoritus, toinen);
 
-        toinen = new Suoritus(kurssi, null);
+        toinen = new Suoritus(kurssi, null, 5);
         assertNotEquals(suoritus, toinen);
     }
 

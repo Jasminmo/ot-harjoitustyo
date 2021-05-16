@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 
 public class FileKurssiDao implements KurssiDao {
@@ -35,10 +36,18 @@ public class FileKurssiDao implements KurssiDao {
     }
 
     @Override
-    public Kurssi create(Kurssi k) throws IOException {
-        kurssit.add(k);
+    public Kurssi create(Kurssi kurssi) throws IOException {
+        boolean isUnique = !kurssit
+                .stream()
+                .map(k -> k.getKoodi())
+                .collect(Collectors.toList())
+                .contains(kurssi.getKoodi());
+        if (!isUnique) {
+            throw new IOException("Kurssikoodi on jo käytössä");
+        }
+        kurssit.add(kurssi);
         save();
-        return k;
+        return kurssi;
     }
 
     @Override
