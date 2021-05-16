@@ -11,4 +11,7 @@
 | 27.04.2021 | 5 | harjoitustyö viikko 5 |
 | 03.05.2021 | 2 | harjoitustyö viikko 6 |
 | 04.05.2021 | 2 | harjoitustyö viikko 6 |
-| yht   | 43   | | 
+| 10.05.2021 | 2 | harjoitustyö viikko 3 |
+| 15.05.2021 | 3 | harjoitustyö viikko 2 |
+| 16.05.2021 | 5 | harjoitustyö viikko 10 |
+| yht   | 53   | | 
