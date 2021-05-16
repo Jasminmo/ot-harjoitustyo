@@ -10,6 +10,8 @@ JavaFX aiheuttaa päänvaivaa ohjelmiston konfiguroinnin suhteen. Tässä reposi
 
 ## Dokumentaatio
 
+[Käyttöohjeet](https://github.com/Jasminmo/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [Vaatimusmäärittely](https://github.com/Jasminmo/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/Jasminmo/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
